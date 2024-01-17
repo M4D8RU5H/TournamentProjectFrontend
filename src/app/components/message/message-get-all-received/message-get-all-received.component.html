@@ -1,0 +1,9 @@
+<div class="distance">
+    <div *ngFor="let message of messages">
+        <div class="message-container">
+            <h5><b>{{message.senderId}}</b></h5>
+            <h6>{{message.content}}</h6>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</div>

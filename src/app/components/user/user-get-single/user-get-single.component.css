@@ -1,0 +1,170 @@
+mat-card-content {
+    padding: 16px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  mat-card {
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-header {
+    background-color: #f2f2f2; /* Ustawiamy kolor nagłówka */
+    border-top-left-radius: 8px; /* Ustawiamy zaokrąglenie lewego górnego rogu */
+    border-top-right-radius: 8px; /* Ustawiamy zaokrąglenie prawego górnego rogu */
+  }
+  
+  mat-card-title {
+    font-size: 24px; /* Ustawiamy rozmiar tekstu nagłówka */
+    font-weight: bold; /* Ustawiamy pogrubienie tekstu nagłówka */
+    margin: 16px; /* Ustawiamy margines wewnętrzny tekstu nagłówka */
+  }
+  
+  mat-card-actions {
+    display: flex; /* Ustawiamy wyświetlanie przycisków obok siebie */
+    justify-content: flex-end; /* Ustawiamy przyciski na końcu karty */
+    padding: 16px; /* Ustawiamy wewnętrzny odstęp przycisków */
+    background-color: #f2f2f2; /* Ustawiamy kolor tła stopki */
+    border-bottom-left-radius: 8px; /* Ustawiamy zaokrąglenie lewego dolnego rogu */
+    border-bottom-right-radius: 8px; /* Ustawiamy zaokrąglenie prawego dolnego rogu */
+  }
+  
+  mat-card-actions button {
+    margin-left: 16px; /* Ustawiamy odstęp między przyciskami */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .table td:first-child,
+  .table th:first-child {
+    border-left: none;
+  }
+  
+  .table td:last-child,
+  .table th:last-child {
+    border-right: none;
+  }
+  
+  .table td:nth-child(4) {
+    font-weight: bold;
+  }
+  
+  .table td .champion-icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .table td .item-icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .table td.champion {
+    text-align: left;
+  }
+  
+  .table td.champion img {
+    margin-right: 10px;
+  }
+
+  .empty-item {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.205);
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .item-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  tr:hover {
+    background-color: #f0f0f0;
+  }
+
+  .user-queue-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 10px 0px;
+  }
+  
+  .user-queue-info-card {
+    flex: 0 0 calc(50% - 32px);
+    margin: 16px;
+  }
+  
+  .card-container {
+    display: flex;
+  }
+  
+  .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .card-image img {
+    display: block;
+  }
+  
+  .queue-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex: 1 1 50%;
+    margin-right: 16px;
+  }
+
+  .user-queue-info-container mat-card-header {
+    background-image: linear-gradient(to top, #478ad6, #4581d3, #4677d0, #4a6dcb, #5062c6);
+    color: white;
+    border-radius: 20px  20px 0px 0px;
+    height: 70px;
+  }
+
+  h1 {
+    margin-bottom: 32px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  mat-card{
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.85);
+  }

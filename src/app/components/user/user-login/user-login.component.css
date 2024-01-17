@@ -1,0 +1,17 @@
+.site-container{
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.component-style{
+    width: 400px;
+}
+
+.distance{
+    margin: 30px 0px;
+}

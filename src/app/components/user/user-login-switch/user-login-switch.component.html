@@ -1,0 +1,19 @@
+<div>
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon aria-label="close dialog">X</mat-icon>
+      </button>
+    <div *ngIf="case == true">
+        <app-user-login></app-user-login>
+
+            <h6>Don't have account?</h6>
+            <div class="distance">
+                <button mat-raised-button color="accent" (click)="switch()">Sign Up</button>
+            </div>
+    </div>
+    <div *ngIf="case == false">
+        <app-user-create></app-user-create>
+        <div class="distance">
+            <button mat-raised-button color="accent" (click)="switch()">Return</button>
+        </div>
+    </div>
+</div>

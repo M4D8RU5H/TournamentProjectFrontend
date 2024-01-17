@@ -1,0 +1,45 @@
+.site-container{
+    padding-top: 40px;
+    text-align: center;
+}
+input[type="submit"]
+{
+    background: rgba(63, 81, 181, 0.904);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color:white;
+    font-size: 20px;
+    width: 50%;
+    min-width: 20%;
+    text-shadow: 2px 2px 3px rgba(66, 68, 90, 1);
+}
+
+label{
+    text-shadow: 3px 3px 4px rgba(66, 68, 90, 1);
+    font-size: 24px;
+    color: white;
+}
+
+h2{
+    text-shadow: 5px 5px 6px rgba(66, 68, 90, 1);
+    color:white;
+    font-size: 32px;
+}
+
+.distance{
+    margin: 20px;
+}
+
+input
+{
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 50%;
+}

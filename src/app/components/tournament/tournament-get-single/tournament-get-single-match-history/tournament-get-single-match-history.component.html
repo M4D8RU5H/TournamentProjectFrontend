@@ -1,0 +1,26 @@
+<div class="component-content">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+    <tr>
+        <th scope="col">Team 1</th>
+        <th scope="col">Team 2</th>
+        <th scope="col">Stage</th>
+        <th scope="col">Winner</th>
+    </tr>
+    </thead>
+  </table>
+  </div>
+  <div class="table-content">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr *ngFor="let match of matches">
+          <td class="team-name">{{match.firstTeamName}}</td>
+          <td class="team-name">{{match.secondTeamName}}</td>
+          <td class="phase">{{getPhaseName(match.phase)}}</td>
+          <td class="winner">{{getWinnerName(match)}}</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  </div>

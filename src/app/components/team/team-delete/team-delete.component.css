@@ -1,0 +1,10 @@
+.distance{
+    margin: 20px 50px;
+}
+
+h2{
+    text-shadow: 2px 2px 3px rgba(66, 68, 90, 1);
+    color: white;
+    text-align: center;
+    margin: 0px auto;
+}

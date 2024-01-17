@@ -1,0 +1,9 @@
+<form class="example-form" (ngSubmit)="createTeam()">
+    <h2>Create Team</h2>
+
+      <mat-label>Enter team name:</mat-label>
+      <input id="new-user" type="text" [(ngModel)]="name" name="login" class="teamName"/>
+    
+  
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>

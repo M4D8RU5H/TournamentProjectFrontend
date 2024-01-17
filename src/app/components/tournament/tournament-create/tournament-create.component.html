@@ -1,0 +1,49 @@
+<mat-divider></mat-divider>
+<mat-card class="card-content">
+    <div class="component-container">
+        <h4>Create Tournament</h4>
+        <div>
+            <form (ngSubmit)="createTournament()">
+                <div class="parent distance">
+                    <div class="one">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Tournament Name</mat-label>
+                            <input matInput [(ngModel)]="name" name="name">
+                        </mat-form-field>
+                    </div>
+                    <div class="two">
+                        <mat-form-field>
+                            <mat-label>Team Size</mat-label>
+                            <mat-select [(ngModel)]="maxTeamAmount" name="maxTeamAmount">
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="16">16</mat-option>
+                                <mat-option value="32">32</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="four">
+                        <label for="exampleInput2">Registration Starts</label>
+                        <input [formControl]="exampleInput2" id="exampleInput2" type="datetime-local" placeholder="Registration Starts" [(ngModel)]="registrationStarts" name="registrationStarts">
+                    </div>
+                    <div clas="five">
+                        <label for="example-input3">Registration Ends</label>
+                        <input type="datetime-local" placeholder="Registration Ends" [(ngModel)]="registrationEnds" name="registrationEnds">
+                    </div>
+                    <div class="six">
+                        <label>Tournament Date</label>
+                        <input type="datetime-local" placeholder="Tournament Date" [(ngModel)]="tournamentDate" name="tournamentDate">
+                    </div>
+                    <div class="seven">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput placeholder="Enter value..." rows="5" [(ngModel)]="description" name="description"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <button type="submit" mat-raised-button color="primary">Create Tournament</button>
+            </form>
+        </div>
+    </div>
+</mat-card>
+

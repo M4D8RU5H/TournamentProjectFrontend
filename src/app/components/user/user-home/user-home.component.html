@@ -1,0 +1,21 @@
+<div class="user-home">
+  <!-- Nav tabs -->
+  <div class="card">
+    <ul class="nav nav-tabs " role="tablist">
+      <li *ngFor="let tab of tabList" (click)="toggleTab(tab.id);" role="presentation" id={{tab.id}}
+        [ngClass]="{'active' : tab.toggle, '': !tab.toggle}"><a aria-controls="home"
+          role="tab" data-toggle="tab" (click)="toggleTab(tab.id)"> <i class={{tab.iconName}}></i> 
+          <span>{{tab.name}}</span></a>
+      </li>
+    </ul>
+    <div *ngIf="buttonId == 1">
+      <app-user-get-all></app-user-get-all>
+    </div>
+    <div *ngIf="buttonId == 2">
+      <app-user-create></app-user-create>
+    </div>
+    <div *ngIf="buttonId == 3">
+      <app-user-update></app-user-update>
+    </div>
+  </div>
+</div>

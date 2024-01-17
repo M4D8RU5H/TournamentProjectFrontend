@@ -1,0 +1,28 @@
+<body>
+    <div class="site-container">
+        <mat-card class="card-content">
+            <div class="newMessage">
+                <button routerLink="/message-create" button type="submit" mat-raised-button color="primary">New message</button>
+            </div>
+                    <mat-card-header>
+                        <mat-card-title>Mailbox</mat-card-title>
+                    </mat-card-header>
+                    <div class="list-group">
+                        <mat-tab-group dynamicHeight>
+                            <mat-tab label="Moja Zakładka">
+                                <ng-template mat-tab-label>
+                                    Received
+                                </ng-template>
+                                <app-message-get-all-received></app-message-get-all-received>
+                            </mat-tab>
+                            <mat-tab label="Moja Zakładka">
+                                <ng-template mat-tab-label>
+                                    Sent
+                                </ng-template>
+                                <app-message-get-all></app-message-get-all>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+        </mat-card>
+    </div>
+</body>

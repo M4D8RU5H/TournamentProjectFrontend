@@ -1,0 +1,63 @@
+<body>
+    <div class="site-container site-container-box-shadow">      
+        <h2>User List</h2>
+        <div class="distance" *ngIf="showLoading">
+            <div class="loading"><div></div><div></div><div></div><div></div></div>
+            <h4 class="distance">Loading data</h4>
+        </div>
+        
+        <div *ngIf="!showLoading">
+            <div class="distance" >
+                <div *ngIf="users">
+                    <div class="emptyList" *ngIf="users.length === 0">
+                        <p>There is no users on the list</p>
+                    </div>
+                   
+                        <div class="distance">
+                        <div class="search_form">
+                            <form (ngSubmit)="searchUser()">
+                                <label>Search by Username</label><Br>
+                                    <input type="text" placeholder="Search User" [(ngModel)]="phrase" [ngModelOptions]="{standalone: true}" class="mat-input-element">
+                    
+                                <input type="submit" hidden>
+                            </form>
+                        </div>
+                        </div>
+                        <div class="distance">
+                        <div class="tbl-header">
+                            <table cellpadding="0" cellspacing="0">
+                                    <thead class="tr1">
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Role Id</th>
+                                        <th scope="col">Rank</th>
+                                        <th scope="col"></th>
+                                    </thead>
+                                </table>
+                            </div>
+                                <div class="tbl-content">
+                                    <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr *ngFor="let user of users">
+                                        <td>{{user.id}}</td>
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.roleId}}</td>
+                                        <td>{{user.rank}}</td>
+                                        <td>
+                                            <a [routerLink]="['/user-get-single', user.id]"><img
+                                                    src="/assets/LoupeIcon.png" class="imageColor" width="16px"
+                                                    height="16px"> Info</a>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                </table>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="emptyList" *ngIf="!users">
+                    <p>Error encountered. Sorry for the problems. Please try again later.</p>
+                </div>
+            </div>
+        </div>       
+</body>

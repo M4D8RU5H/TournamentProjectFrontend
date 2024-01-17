@@ -1,0 +1,42 @@
+<div class="background-color background-pattern">
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <app-main-page></app-main-page>
+            </div>
+            <div class="page-content col-md">
+                <div class="navbar">
+                    <mat-toolbar color="primary">
+                        <a class="navbar-brand" routerLink="/">
+                            <div class="logo-wrapper">
+                                <img src="assets/Logo.jpg" width="56px" height="56px">
+                                <div class="logo-text-wrapper">
+                                    <h6>League of</h6>
+                                    <h6>Tournaments</h6>
+                                </div>
+                            </div>
+                        </a>
+                        <span class="example-spacer"></span>
+                        <button mat-raised-button (click)="openDialogLogin()" class="AppComponent" *ngIf="this.isButtonVisible">
+                            <img src="../assets/MessageIcon.png" width="16px" height="16px">
+                            Sign in
+                        </button>
+                        <button mat-raised-button (click)="logOut()" class="AppComponent" *ngIf="!this.isButtonVisible">
+                            <img src="../assets/MessageIcon.png" width="16px" height="16px">
+                            Log Out
+                        </button>
+                        <button mat-raised-button routerLink="/message-home">
+                            <img src="../assets/MessageIcon.png" width="16px" height="16px">
+                            Messages
+                        </button>
+                        <button mat-fab extended color="primary" routerLink="/settings-home">
+                            <img src="../assets/SettingsIcon.png" width="16px" height="16px">
+                            Settings
+                        </button>
+                    </mat-toolbar>
+                </div>
+                <router-outlet class="body"></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

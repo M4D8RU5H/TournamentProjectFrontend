@@ -1,0 +1,19 @@
+<body>
+    <div class="site-container site-container-box-shadow">
+        
+        <form class="example-form" (ngSubmit)="createPost()">
+            <h2>Create Post</h2>
+            <div class="parent distance">
+                <div class="one">
+                    <label>Title </label><br>
+                    <input type="text" [(ngModel)]="title" name="title" />
+                    <br> 
+                    <label>Content </label><br>
+                    <textarea [(ngModel)]="content" name="content"></textarea> 
+                </div>
+            </div>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+    
+    </div>
+</body>

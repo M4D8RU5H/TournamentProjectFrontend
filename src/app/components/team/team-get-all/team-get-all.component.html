@@ -1,0 +1,54 @@
+<mat-divider></mat-divider>
+
+<div class="component-container">
+  <div class="distance" *ngIf="showLoading">
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h4 class="distance">Loading data</h4>
+  </div>
+  <div *ngIf="!showLoading">
+    <div class="distance">
+      <button routerLink="/team-create" button type="submit" mat-raised-button color="primary"
+        class="createTeamButton">Create Team</button>
+      <div *ngIf="teams">
+        <div class="emptyList" *ngIf="teams.length === 0">
+          <p>There are no teams on the list</p>
+        </div>
+        <div *ngIf="teams.length >= 0">
+          <mat-grid-list cols="3">
+            <mat-grid-tile *ngFor="let team of teams.slice(begin, end)" rowHeight="2:1">
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>{{team.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <ul *ngFor="let teamMember of team.teamMembers">
+                    <li>
+                      <a [routerLink]="['/user-get-single', teamMember.id]">{{teamMember.name}} {{teamMember.rank}}</a>
+                    </li>
+                    <mat-divider></mat-divider>
+                  </ul>
+                  <mat-card-actions>
+                    <a [routerLink]="['/team-get-single', team.id]"><img src="/assets/LoupeIcon.png"
+                        class="imageColor" width="16px" height="16px"> Info</a>
+                  </mat-card-actions>
+                </mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-paginator [length]="teams.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="onPageChange($event)">
+          </mat-paginator>
+        </div>
+        <div class="emptyList" *ngIf="!teams">
+          <p>An error occurred. Sorry for the inconvenience. Please try again later.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="distance">
+    <h2>Lista meczów</h2>
+    <div class="distance">
+        <form (ngSubmit)="getSingleMatch()">
+            <label for="new-role">Id meczu: </label><br>
+            <input id="new-role" type="number" [(ngModel)]="id" name="id" />
+    
+            <input type="submit" value="Send id">
+        </form>
+    </div>
+    <div class="distance">
+        <table class="table table-striped table-sm align-middle mb-0 bg-white">
+            <thead class="bg-light">
+                <tr>
+                    <th>Id</th>
+                    <th>FirstTeamId</th>
+                    <th>SecondTeamId</th>
+                    <th>Choose winner</th>
+                    <th>WinnerId</th>
+                    <th>Phase</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{match?.id}}</td>
+                    <td>{{match?.firstTeamId}}</td> 
+                    <td>{{match?.secondTeamId}}</td>
+                    <td>
+                        <button (click)="match && updateWinnersId(match.firstTeamId)">Team1</button>
+                        <button (click)="match && updateWinnersId(match.secondTeamId)">Team2</button>
+                    </td> 
+                    <td>{{match?.winnerId}}</td>
+                    <td>{{match?.phase}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

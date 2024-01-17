@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<mat-divider></mat-divider>
+<body>
+    <div class="site-container site-container-box-shadow">
+        <h2>Update Tournament</h2>
+        <form (ngSubmit)="updateTournament()">
+            <div class="parent distance">
+                <div class="one">
+                    <label for="edit-tournament">Name </label><br>
+                    <input id="edit-tournament" type="text" [(ngModel)]="name" name="name" />
+                </div>
+                <div class="two">
+                    <label for="edit-tournament">Team Size </label><br>
+                    <input id="edit-tournament" type="number" [(ngModel)]="maxTeamAmount" name="maxTeamAmount" />
+                </div>
+                <div class="three">
+                    <label for="edit-tournament">Date </label><br>
+                    <input id="edit-tournament" type="datetime-local" [(ngModel)]="tournamentDate"
+                        name="tournamentDate" />
+                </div>
+                <div clas="four">
+                    <label for="edit-tournament">Registration Starts </label><br>
+                    <input id="edit-tournament" type="datetime-local" [(ngModel)]="registrationStarts"
+                        name="registrationStarts" />
+                </div>
+                <div class="five">
+                    <label for="edit-tournament">Registration Ends </label><br>
+                    <input id="edit-tournament" type="datetime-local" [(ngModel)]="registrationEnds"
+                        name="registrationEnds" />
+                </div>
+                <div class="six">
+                        <label>Tournament Id</label><br>
+                        <input type="text" [(ngModel)]="id" name="id" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="seven">
+                    <label for="edit-tournament">Description </label><br>
+                    <textarea [(ngModel)]="description" name="description" rows="5"></textarea>
+                </div>
+                <div clas="eight">
+                    <label for="edit-tournament">Transmition Link </label><br>
+                    <input id="edit-tournament" type="text" [(ngModel)]="liveTransmisionEmbed"
+                        name="liveTransmisionEmbed" />
+                </div>
+            </div>
+
+            <div class="distance">
+                <input type="submit" class="btn btn-secondary" value="Update tournament">
+            </div>
+        </form>
+    </div>
+</body>

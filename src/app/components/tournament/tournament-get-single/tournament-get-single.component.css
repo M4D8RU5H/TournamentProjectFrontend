@@ -1,0 +1,93 @@
+mat-card-header {
+    background-image: linear-gradient(to top, #478ad6, #4581d3, #4677d0, #4a6dcb, #5062c6);
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+    justify-content: center;
+    padding: 15px 0px;
+}
+
+mat-card-title{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+mat-card-content{
+    margin: 20px 0px;
+}
+mat-card-subtitle{
+  width: 90px;
+  margin: 0 auto;
+}
+.addTeamButton{
+  margin-left: 90%;
+}
+.editButton{
+  margin-bottom:10px;
+  margin-left: 91%;
+}
+.closeButton{
+  margin-right: 10px;
+}
+.card-content {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    ;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 30px;
+    margin: 25px 0px;
+  }
+  .grid-item{
+    padding: 0px 40px;
+  }
+
+  mat-form-field{
+    width: 100%;
+  }
+
+  input[type=datetime-local] {
+    padding: 12px 10px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    border: 0.5px solid white;
+    border-radius: 4px;
+    transition: 0.5s;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    color: gray;
+    background-color: #f3f3f3;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    height: 56px;
+  }
+
+  h3{
+    margin: 20px 0px;
+  }
+
+  .popup-container
+{
+    left:50%;
+    top:40%;
+    width: 30%;
+    height: 40%;
+    -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position:absolute;
+    background: rgba(215, 215, 215, 0.307);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 25px );
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.center{
+  justify-content: center !important;
+  text-align: center;
+}

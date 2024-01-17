@@ -1,0 +1,21 @@
+.distance{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h6{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-dialog-content {
+    overflow: hidden;
+  }
+
+button{
+    margin: 10px;
+}

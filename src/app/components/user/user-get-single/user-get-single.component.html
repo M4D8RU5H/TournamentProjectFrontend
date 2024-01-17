@@ -1,0 +1,92 @@
+<div class="distance">
+      <div *ngIf="user">
+        <mat-card>
+          <mat-card-content>
+            <h1>{{user.name}} Informations</h1>
+
+            <mat-divider></mat-divider>
+
+            <h2>{{user.name}} Divisions Information</h2>
+            <div class="user-queue-info-container">
+              <div class="user-queue-info-card" *ngFor="let queueInfo of userQueueInfo">
+                <div class="card-container">
+                  <div class="card-image">
+                    <img *ngIf="queueInfo.divisionLink" src="{{ queueInfo.divisionLink }}" alt="{{ queueInfo.divisionLink }} icon" width="256px" height="256px"
+                      title="{{ queueInfo.divisionLink }}" />
+                  </div>
+
+                  <mat-card>
+                    <mat-card-header>
+                      {{ queueInfo.queueName }}
+                    </mat-card-header>
+                    <mat-card-content>
+                      <div class="queue-info">
+                        <div class="column">
+                          <p><strong>League Rank:</strong> {{ queueInfo.leagueTier }} {{ queueInfo.leagueTierRank }}</p>
+                          <p><strong>League Points:</strong> {{ queueInfo.leaguePoints }}</p>
+                        </div>
+                        <div class="column">
+                          <p><strong>Wins:</strong> {{ queueInfo.wins }}</p>
+                          <p><strong>Loses:</strong> {{ queueInfo.loses }}</p>
+                          <p><strong>Winrate:</strong> {{ queueInfo.winrate }}</p>
+                          <p><strong>Games Played:</strong> {{ queueInfo.gamesPlayed }}</p>
+                        </div>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <h2>Match History</h2>
+            <div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Game Type</th>
+                    <th>Date</th>
+                    <th>Length</th>
+                    <th>Result</th>
+                    <th>Champion</th>
+                    <th>Level</th>
+                    <th>Stats</th>
+                    <th>KDA</th>
+                    <th>CS</th>
+                    <th>Gold</th>
+                    <th>Items</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="cursor: pointer;" *ngFor="let match of userMatchHistory">
+                    <td>{{ match.gameType }}</td>
+                    <td>{{ match.gameDate | date:"yyyy-MM-dd HH:mm" }}</td>
+                    <td>{{ match.gameLength }}</td>
+                    <td [class.text-success]="match.win" [class.text-danger]="!match.win">{{ match.win ? 'Win' : 'Loss'
+                      }}</td>
+                    <td class="champion">
+                      <img src="{{ match.champIconUrl }}" alt="{{ match.champName }}" title="{{ match.champName }}"
+                        class="champion-icon" />
+                      <span>{{ match.champName }}</span>
+                    </td>
+                    <td> {{ match.champLevel }}</td>
+                    <td> {{match.kills}} / {{match.deaths}} / {{match.assists}} </td>
+                    <td>{{ match.kda }}</td>
+                    <td>{{ match.minionsKilled }}</td>
+                    <td>{{ match.goldEarned }}</td>
+                    <td class="item-row">
+                      <div *ngFor="let item of match.itemPathList">
+                        <img *ngIf="item.itemPath !== 'noItem'" src="{{ item.itemPath }}" alt="{{ item.itemPath }} icon"
+                          title="{{ item.itemPath }}" class="item-icon" />
+                        <div *ngIf="item.itemPath === 'noItem'" class="empty-item"></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+</div>

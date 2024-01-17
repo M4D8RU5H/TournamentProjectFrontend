@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <div class="site-container site-container-box-shadow">
+        <h2>Edit Account</h2>
+        <form (ngSubmit)="updateUser()">
+            <div class="parent distance">
+                <div class="one">
+                    <label for="new-user">Login </label><br>
+                    <input id="new-user" type="text" [(ngModel)]="login" name="login" />
+                </div>
+                <div class="two">
+                    <label for="new-user">Password </label><br>
+                    <input id="new-user" type="text" [(ngModel)]="password" name="password" />
+                </div>
+                <div class="three">
+
+                </div>
+                <div class="four">
+
+                </div>
+                <div class="five">
+                    <label for="new-user">User Name </label><br>
+                    <input id="new-user" type="text" [(ngModel)]="name" name="name" />
+                </div>
+                <div class="seven">
+                    <label for="new-user">Rank </label><br>
+                    <input id="new-user" type="text" [(ngModel)]="rank" name="rank" />
+                </div>
+            </div>
+
+
+            <input type="submit" value="Update User">
+        </form>
+    </div>
+</body>

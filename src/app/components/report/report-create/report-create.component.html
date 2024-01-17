@@ -1,0 +1,21 @@
+<form class="example-form" (ngSubmit)="createReport()">
+  <h2>Create</h2>
+  <h2>Report</h2>
+
+  <mat-form-field class="distance">
+    <mat-label>Category</mat-label>
+    <mat-select [(ngModel)]="category" name="category">
+      <mat-option value="1">Nieodpowiednie zachowanie</mat-option>
+      <mat-option value="2">Obelga/obraza</mat-option>
+      <mat-option value="3">Oszukiwanie</mat-option>
+      <mat-option value="4">Inne</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="distance">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="description" name="description"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

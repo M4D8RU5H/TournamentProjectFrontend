@@ -1,0 +1,108 @@
+body{
+    margin: 40px 0px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr) 2fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    grid-template-areas:
+        "one two three"
+        "four five six"
+        "seven eight nine";
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.four {
+    grid-area: five;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight{
+    grid-area: eight;
+}
+
+.seven textarea {
+    width: 455px;
+    resize: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+    box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+}
+
+.parent input {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+    box-shadow: 7px 4px 17px -12px rgba(66, 68, 90, 1);
+}
+
+input
+{
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+textarea{
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+input[type="submit"]
+{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color:white;
+}
+
+label{
+    text-shadow: 2px 2px 3px rgba(66, 68, 90, 1);
+    font-size: 16px;
+    color: white;
+}
+
+h2{
+    text-shadow: 2px 2px 3px rgba(66, 68, 90, 1);
+    color:white;
+}
+
+.site-container{
+    border-radius: 0px 15px 15px 15px;
+    padding: 20px;
+    background-color: #0397AB;
+    margin-right: 30px;
+}

@@ -1,0 +1,84 @@
+<div class="site-container site-container-box-shadow">
+    <h2>{{team?.name}} Team Information</h2>
+    <div class="distance">
+        <h2 class="display-inline">Members</h2>
+        <div class="a2">
+            <div (click)="displayPopup(); selectOperation(1)"><i class="fa fa-plus"></i> Add Member</div>
+        </div>
+        <div class="distance">
+            <div *ngIf="team">
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Rank</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr *ngFor="let teamMember of team.teamMembers">
+                                <td>{{teamMember.name}}</td>
+                                <td>{{teamMember.rank}}</td>
+                                <td>
+                                    <a [routerLink]="['/user-get-single', teamMember.id]"><img
+                                            src="/assets/LoupeIcon.png" class="imageColor" width="16px"
+                                            height="16px"> Info</a>
+                                    <a (click)="deleteTeamMember(team.id, teamMember.id)"><img src="/assets/Remove.png"
+                                            class="imageColor" width="16px" height="16px">Remove Player</a>
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="distance">
+                    <button routerLink="/team-get-all"><img src="/assets/Previous.jpg" class="imageColor" width="20px"
+                            height="20px">Previous</button>
+                    <button (click)="displayPopup(); selectOperation(2)"><img src="/assets/TrashCanIcon.png"
+                            class="imageColor" width="20px" height="20px">Delete</button>
+                </div>
+
+                <div *ngIf="display == true">
+                    <div class="popup-container">
+                        <div style="text-align: right; padding-top: 10px;">
+                            <a (click)="displayPopup()"><img src="/assets/xmark.png" class="imageColor" width="32px"
+                                    height="32px"></a>
+                        </div>
+                        <div *ngIf="operation == 1">
+                            <form (ngSubmit)="addTeamMember()">
+                                <div class="center">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Search Player" [formControl]="searchControl"
+                                            [matAutocomplete]="auto">
+                                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+                                            (optionSelected)="onSelectUser($event.option.value)">
+                                            <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
+                                                {{ user.name }}
+                                            </mat-option>
+                                        </mat-autocomplete>
+                                    </mat-form-field>                                 
+                                </div>      
+                                <div class="center">
+                                    <input type="submit" value="Add Team Member">
+                                </div>   
+                            </form>
+                        </div>
+                        <div *ngIf="operation == 2">
+                            <app-team-delete></app-team-delete>
+
+                            <div class="popup-buttons">
+                                <div *ngIf="team">
+                                    <button class="button" (click)="displayPopup()">Cancel</button>
+                                    <button class="button" (click)="deleteTeam(team.id)">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

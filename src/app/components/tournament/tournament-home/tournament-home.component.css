@@ -1,0 +1,16 @@
+.component-container{
+  margin: 25px 0px;
+}
+
+.mat-tab-body-wrapper, .mat-tab-body {
+  height: 100%;
+}
+
+::ng-deep .mdc-tab__text-label {
+  font-size: x-large;
+}
+
+::ng-deep .mat-mdc-tab-label-container{
+  display: none;
+  background-color: white;
+}

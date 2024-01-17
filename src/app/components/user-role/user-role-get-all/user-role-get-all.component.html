@@ -1,0 +1,46 @@
+<body>
+    <div class="site-container site-container-box-shadow">
+        <h2>User Role List</h2>
+        <div class="a2">
+            <div (click)="displayPopup()"><i class="fa fa-plus"></i> Add User Role</div>
+        </div>
+
+        <div *ngIf="display == true">
+            <div class="popup-container">
+                <div style="text-align: right; padding-top: 10px;">
+                    <a (click)="displayPopup()"><img src="/assets/xmark.png"  width="32px"
+                            height="32px"></a>
+                </div>
+                <app-user-role-create></app-user-role-create>
+            </div>
+        </div>
+
+        <div class="distance">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr *ngFor="let userRole of userRoles">
+                            <td>{{userRole.id}}</td>
+                            <td>{{userRole.name}}</td>
+                            <td>
+                                <a (click)="deleteUserRole(userRole.id)"><img src="/assets/TrashCanIcon.png"  width="20px"
+                                        height="20px"> Delete</a>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

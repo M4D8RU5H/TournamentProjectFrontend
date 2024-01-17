@@ -1,0 +1,64 @@
+<mat-divider></mat-divider>
+
+<div class="component-container">
+  <div class="distance" *ngIf="showLoading">
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h4 class="distance">Loading data</h4>
+  </div>
+  <div *ngIf="!showLoading">
+    <div class="distance">
+      <div *ngIf="tournaments">
+        <div class="emptyList" *ngIf="tournaments.length === 0">
+          <p>There is no tournaments on the list</p>
+        </div>
+        <div *ngIf="tournaments.length >= 0">
+          <mat-grid-list cols="3">
+            <mat-grid-tile *ngFor="let tournament of tournaments.slice(begin, end)" rowHeight="2:1">
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>{{tournament.name}}</mat-card-title>
+                  <mat-card-subtitle>{{tournament.status}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <ul>
+                    <li>
+                      <b>Description:</b><br> {{tournament.description}}
+                    </li><br>
+                    <li>
+                      <b>Number of teams:</b><br> {{tournament.maxTeamAmount}}
+                    </li><br>
+                    <li>
+                      <b>Tournament Date:</b> {{tournament.tournamentDate | date:"yyyy-MM-dd HH:mm"}}
+                    </li>
+                    <li>
+                      <b>Registartion Starts:</b> {{tournament.registrationStarts | date:"yyyy-MM-dd HH:mm"}}
+                    </li>
+                    <li>
+                      <b>Registartion Ends:</b> {{tournament.registrationEnds | date:"yyyy-MM-dd HH:mm"}}
+                    </li>
+                  </ul>
+                  <mat-card-actions>
+                    <a [routerLink]="['/tournament-get-single', tournament.id]"><img src="/assets/LoupeIcon.png"
+                        class="imageColor" width="16px" height="16px"> Info</a>
+                  </mat-card-actions>
+                </mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-paginator [length]="tournaments.length" [pageSize]="pageSize"
+          [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+        </mat-paginator>
+        </div>
+        <div class="emptyList" *ngIf="!tournaments">
+          <p>Error encountered. Sorry for the problems. Please try again later.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

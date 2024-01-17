@@ -1,0 +1,33 @@
+<div class="site-container">
+    <div class="component-style">
+        <mat-dialog-content>
+            <h2>League of</h2>
+            <h2>Tournaments</h2>
+
+            <form (ngSubmit)="createUser()">
+                <div class="distance">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="login" name="login">
+                    </mat-form-field>
+                </div>
+                <div class="distance">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput [(ngModel)]="password" name="password" type="password">
+                    </mat-form-field>
+                </div>
+                <div class="distance">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>User Name (In Game)</mat-label>
+                        <input matInput [(ngModel)]="name" name="name">
+                    </mat-form-field>
+                </div>
+
+                <button mat-raised-button color="primary" type="submit">Sign Up</button>
+            </form>
+
+            <hr/>  
+        </mat-dialog-content>
+    </div>
+</div>

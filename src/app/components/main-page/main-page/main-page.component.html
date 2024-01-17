@@ -1,0 +1,14 @@
+<body>
+    <div class="wrapper">
+        <div class="sidebar">         
+            <div class="btn-toggle navigation" data-bs-toggle="buttons">
+                <ul *ngFor="let button of dataList">
+                    <li>
+                        <button mat-raised-button type="button"  id={{button.id}} routerLink={{button.routingPath}} 
+                        [ngClass]="{'clickedButton' : button.toggle, '.navigation button': !button.toggle}"><i class={{button.iconName}} ></i>{{button.name}}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

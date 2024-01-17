@@ -1,0 +1,136 @@
+<mat-divider></mat-divider>
+
+<div class="component-container">
+  <div class="distance" *ngIf="showLoading">
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h4 class="distance">Loading data</h4>
+  </div>
+  <div *ngIf="!showLoading">
+    <div class="distance">
+      <div *ngIf="tournament">
+        <mat-card class="card-content">
+          <mat-card-header>
+            <mat-card-title>{{tournament.name}}</mat-card-title>
+            <mat-card-subtitle>Stages left: {{tournament.status}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="grid-container">
+              <div class="grid-item">
+                <h3>Number of teams</h3>
+                <p *ngIf="!editMode">{{tournament.maxTeamAmount}}</p>
+                <mat-form-field appearance="fill" *ngIf="editMode">
+                  <mat-label>Team Size</mat-label>
+                  <mat-select [(ngModel)]="tournament.maxTeamAmount">
+                    <mat-option value="8">8</mat-option>
+                    <mat-option value="16">16</mat-option>
+                    <mat-option value="32">32</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-divider *ngIf="!editMode"></mat-divider>
+              </div>
+              <div class="grid-item">
+                <h3>Tournament Date</h3>
+                <p *ngIf="!editMode">{{tournament.tournamentDate | date:"yyyy-MM-dd HH:mm"}}</p>
+                <div appearance="fill" *ngIf="editMode">
+                  <input type="datetime-local" placeholder="Tournament Date" [(ngModel)]="tournament.tournamentDate">
+                </div>
+                <mat-divider *ngIf="!editMode"></mat-divider>
+              </div>
+              <div class="grid-item">
+                <h3>Registration Starts</h3>
+                <p *ngIf="!editMode">{{tournament.registrationStarts | date:"yyyy-MM-dd HH:mm"}}</p>
+                <div appearance="fill" *ngIf="editMode">
+                  <input [formControl]="exampleInput2" id="exampleInput2" type="datetime-local"
+                    placeholder="Registration Starts" [(ngModel)]="tournament.registrationStarts">
+                </div>
+                <mat-divider *ngIf="!editMode"></mat-divider>
+              </div>
+              <div class="grid-item">
+                <h3>Registration Ends</h3>
+                <p *ngIf="!editMode">{{tournament.registrationEnds | date:"yyyy-MM-dd HH:mm"}}</p>
+                <div *ngIf="editMode">
+                  <input type="datetime-local" placeholder="Registration Ends"
+                    [(ngModel)]="tournament.registrationEnds">
+                </div>
+                <mat-divider *ngIf="!editMode"></mat-divider>
+              </div>
+              <div class="grid-item">
+                <h3>Description</h3>
+                <p *ngIf="!editMode">{{tournament.description}}</p>
+                <mat-form-field appearance="fill" *ngIf="editMode">
+                  <mat-label>Description</mat-label>
+                  <textarea matInput [(ngModel)]="tournament.description"></textarea>
+                </mat-form-field>
+                <mat-divider *ngIf="!editMode"></mat-divider>
+              </div>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="editMode = false" *ngIf="editMode" class="closeButton">Close</button> 
+            <button mat-raised-button color="primary" (click)="save()" *ngIf="editMode">Save</button>
+            <button mat-raised-button color="primary" (click)="editMode = true" *ngIf="!editMode" class="editButton">Edit</button>
+
+            <button mat-raised-button color="primary" (click)="displayPopup()" class="addTeamButton">Add Team</button>
+
+            <div *ngIf="tournament.maxTeamAmount == teamsList?.length">
+              <button mat-raised-button color="primary" (click)="startTournament()">Start Tournament</button>
+            </div>
+
+            <div class="list-group">
+              <mat-tab-group dynamicHeight>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    Match History
+                  </ng-template>
+                  <app-tournament-get-single-match-history [id]="tournament.id"></app-tournament-get-single-match-history>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    Teams
+                  </ng-template>
+                  <app-tournament-get-single-teams [id]="tournament.id"></app-tournament-get-single-teams>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-card-content>
+          <mat-card-footer>
+            <button mat-raised-button color="primary" type="button" routerLink="/tournament-get-all">Back to
+              list</button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+      <div *ngIf="display == true">
+        <div class="popup-container">
+          <div style="text-align: right; padding-top: 10px;">
+            <a (click)="displayPopup()"><img src="/assets/xmark.png" class="imageColor" width="32px" height="32px"></a>
+          </div>
+          <div>
+            <form (ngSubmit)="addTeam()">
+              <div class="center">
+                <mat-form-field>
+                  <input matInput placeholder="Search Player" [formControl]="searchControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+                    (optionSelected)="onSelectUser($event.option.value)">
+                    <mat-option *ngFor="let team of filteredTeams | async" [value]="team">
+                      {{ team.teamName }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </div>
+              <div class="center">
+                <input type="submit" value="Add Team">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="emptyList" *ngIf="!tournament">
+        <p>Error encountered. Sorry for the problems. Please try again later.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.example-form {
+    background-image: linear-gradient(to top, #478ad6, #4581d3, #4677d0, #4a6dcb, #5062c6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    width: 750px;
+    margin-top: 50px;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.teamName{
+    margin: 20px auto;
+    width: 200px;
+}
+mat-form-field{
+    width: 60%;
+}
+mat-label{
+    color: white;
+}
+h2{
+    color: white;
+    text-shadow: 3px 3px 5px rgba(37, 37, 45, 1);
+}
+
+.distance{
+    margin: 30px 0px;
+}
+

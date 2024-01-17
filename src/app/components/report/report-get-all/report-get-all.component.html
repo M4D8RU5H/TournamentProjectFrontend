@@ -1,0 +1,37 @@
+<body>
+    <div class="site-container site-container-box-shadow">
+        <h2>Reports List</h2>
+        <div class="distance">
+            <button routerLink="/report-create" button type="submit" mat-raised-button color="primary">Create Report</button>
+        </div>
+        <div class="distance">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sender Id</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr *ngFor="let report of reports">
+                            <td>{{report.userId}}</td>
+                            <td>{{report.category}}</td>
+                            <td>{{report.date | date:"yyyy-MM-dd HH:mm"}}</td>
+                            <td>{{report.description}}</td>
+
+                            <td>{{report.status}}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

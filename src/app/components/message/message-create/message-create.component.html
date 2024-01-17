@@ -1,0 +1,20 @@
+
+
+<body>
+    <div>
+        <form (ngSubmit)="createMessage()" class="example-form">
+            <h2>Create new message</h2>
+            <mat-form-field class="distance">
+                <label for="new-user" class="h3">Receiver's Id: </label><br>
+                <input id="new-user" type="text" [(ngModel)]="receiverId" name="receiverId" />
+            </mat-form-field>
+                
+            <mat-form-field class="distance">
+                <label for="new-user" class="h3">Content: </label><br>
+                <textarea matInput id="new-user" type="text" [(ngModel)]="content" name="content" rows="4" cols="48"></textarea>
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" type="submit">Send</button>
+        </form>
+    </div>
+</body>

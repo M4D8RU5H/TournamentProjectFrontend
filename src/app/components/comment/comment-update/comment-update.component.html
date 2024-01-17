@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <app-tournament-home></app-tournament-home>
+    <div class="distance">
+        <h2>Edytuj komentarz</h2>
+        <form (ngSubmit)="updateComment()">
+            <div class="parent distance">
+                <div class="one">
+                    <label>User Id </label><br>
+                    <input type="text" [(ngModel)]="userId"/>
+                </div>
+                <div class="two">
+                    <label>Content </label><br>
+                    <input type="number" [(ngModel)]="content"/>
+                </div>
+                <div class="three">
+                    <label>Post Id </label><br>
+                    <input type="datetime-local" [(ngModel)]="postId"/>
+                </div>
+                <div class="four">
+                    <label>Comment Date </label><br>
+                    <input type="datetime-local" [(ngModel)]="commentDate"/>
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-secondary" value="Edit tournament">
+        </form>
+    </div>
+</body>
